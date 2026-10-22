@@ -347,10 +347,10 @@ export function CurriculoForm() {
       </div>
 
       <form onSubmit={salvar} noValidate className="mt-8 space-y-5">
-        <Card className="rounded-2xl border-stone-200 shadow-none">
+        <Card className="rounded-lg border-stone-200 shadow-none">
           <CardContent className="p-5 sm:p-7">
             <div className="mb-6 flex items-center gap-3">
-              <span className="flex size-10 items-center justify-center rounded-xl bg-terracotta-50 text-terracotta-800">
+              <span className="flex size-8 items-center justify-center text-terracotta-800">
                 <UserRound size={20} />
               </span>
               <div>
@@ -534,11 +534,11 @@ export function CurriculoForm() {
           </CardContent>
         </Card>
 
-        <Card className="rounded-2xl border-stone-200 shadow-none">
+        <Card className="rounded-lg border-stone-200 shadow-none">
           <CardContent className="p-5 sm:p-7">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <span className="flex size-10 items-center justify-center rounded-xl bg-terracotta-50 text-terracotta-800">
+                <span className="flex size-8 items-center justify-center text-terracotta-800">
                   <BriefcaseBusiness size={20} />
                 </span>
                 <div>
@@ -572,11 +572,11 @@ export function CurriculoForm() {
                 Nenhuma experiência adicionada. Este campo é opcional.
               </p>
             )}
-            <div className="mt-4 space-y-4">
+            <div className="mt-4 space-y-3">
               {experiencias.fields.map((item, index) => (
                 <div
                   key={item.id}
-                  className="rounded-xl border border-stone-200 p-4 sm:p-5"
+                  className="border-t border-stone-200 py-4"
                 >
                   <div className="mb-4 flex items-center justify-between">
                     <p className="text-sm font-semibold text-stone-800">
@@ -661,11 +661,11 @@ export function CurriculoForm() {
           </CardContent>
         </Card>
 
-        <Card className="rounded-2xl border-stone-200 shadow-none">
+        <Card className="rounded-lg border-stone-200 shadow-none">
           <CardContent className="p-5 sm:p-7">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <span className="flex size-10 items-center justify-center rounded-xl bg-terracotta-50 text-terracotta-800">
+                <span className="flex size-8 items-center justify-center text-terracotta-800">
                   <GraduationCap size={21} />
                 </span>
                 <div>
@@ -698,11 +698,11 @@ export function CurriculoForm() {
                 Nenhuma formação adicionada. Este campo é opcional.
               </p>
             )}
-            <div className="mt-4 space-y-4">
+            <div className="mt-4 space-y-3">
               {formacoes.fields.map((item, index) => (
                 <div
                   key={item.id}
-                  className="rounded-xl border border-stone-200 p-4 sm:p-5"
+                  className="border-t border-stone-200 py-4"
                 >
                   <div className="mb-4 flex items-center justify-between">
                     <p className="text-sm font-semibold text-stone-800">

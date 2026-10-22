@@ -51,7 +51,7 @@ export function CurriculosLista() {
         </Link>
       </div>
 
-      <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
         <div className="relative w-full sm:max-w-md">
           <Search
             size={17}
@@ -63,7 +63,7 @@ export function CurriculosLista() {
             placeholder="Buscar por nome ou cargo..."
             value={busca}
             onChange={(event) => setBusca(event.target.value)}
-            className="h-11 rounded-xl border-stone-200 bg-white pl-10 pr-10"
+            className="h-10 rounded-md border-stone-200 bg-white pl-10 pr-10"
           />
           <span id="search-description" className="sr-only">
             A lista é filtrada em tempo real pelo nome ou cargo.
@@ -92,7 +92,7 @@ export function CurriculosLista() {
       {carregando ? (
         <div className="mt-6 space-y-3">
           {Array.from({ length: 6 }, (_, index) => (
-            <Card key={index} className="rounded-2xl">
+            <Card key={index} className="rounded-lg">
               <CardContent className="grid gap-4 p-4 sm:grid-cols-[minmax(0,14rem)_minmax(0,1fr)_auto] sm:items-center sm:p-5">
                 <div className="flex min-w-0 items-center gap-3">
                   <Skeleton className="size-12 rounded-full" />
@@ -115,7 +115,7 @@ export function CurriculosLista() {
           {filtrados.map((curriculo) => (
             <Card
               key={curriculo.id}
-              className="rounded-2xl border-stone-200 shadow-none transition-shadow hover:shadow-md"
+              className="rounded-lg border-stone-200 shadow-none"
             >
               <CardContent className="grid gap-4 p-4 sm:grid-cols-[minmax(0,14rem)_minmax(0,1fr)_auto] sm:items-center sm:p-5">
                 <div className="flex min-w-0 items-center gap-3">
@@ -156,7 +156,7 @@ export function CurriculosLista() {
                 </p>
                 <Link
                   href={`/curriculos/visualizar/${curriculo.id}`}
-                  className="inline-flex h-9 w-fit items-center gap-2 rounded-lg border border-stone-200 px-3 text-sm font-medium text-stone-700 transition-colors hover:border-terracotta-700 hover:bg-terracotta-50 hover:text-terracotta-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-700"
+                  className="inline-flex h-9 w-fit items-center gap-2 rounded-md border border-stone-200 px-3 text-sm font-medium text-stone-700 transition-colors hover:border-terracotta-700 hover:text-terracotta-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-700"
                 >
                   Ver currículo <ArrowRight size={15} />
                 </Link>
@@ -165,9 +165,9 @@ export function CurriculosLista() {
           ))}
         </div>
       ) : (
-        <Card className="mt-8 rounded-2xl border-dashed border-stone-300 shadow-none">
+        <Card className="mt-8 rounded-lg border-stone-300 shadow-none">
           <CardContent className="flex flex-col items-center px-6 py-14 text-center">
-            <span className="flex size-14 items-center justify-center rounded-2xl bg-terracotta-50 text-terracotta-800">
+            <span className="flex size-10 items-center justify-center text-terracotta-800">
               {busca ? <Search size={24} /> : <Users size={24} />}
             </span>
             <h2 className="mt-4 text-lg font-semibold text-stone-900">

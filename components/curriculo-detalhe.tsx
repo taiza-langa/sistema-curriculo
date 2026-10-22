@@ -25,7 +25,7 @@ import { useCurriculos } from "@/hooks/use-curriculos"
 
 function Iniciais({ nome }: { nome: string }) {
   return (
-    <span className="flex size-20 shrink-0 items-center justify-center rounded-full bg-terracotta-100 text-2xl font-bold text-terracotta-900">
+    <span className="flex size-16 shrink-0 items-center justify-center rounded-full bg-stone-100 text-xl font-semibold text-stone-700">
       {nome
         .split(" ")
         .slice(0, 2)
@@ -40,7 +40,7 @@ function CarregandoDetalhe() {
   return (
     <section className="mx-auto max-w-4xl px-5 py-10 sm:px-8">
       <Skeleton className="h-5 w-40" />
-      <Card className="mt-6 rounded-2xl">
+      <Card className="mt-6 rounded-lg">
         <CardContent className="space-y-5 p-6 sm:p-8">
           <div className="flex gap-5">
             <Skeleton className="size-20 rounded-full" />
@@ -123,9 +123,9 @@ export function CurriculoDetalhe({ id }: { id: string }) {
       >
         <ArrowLeft size={16} /> Voltar aos currículos
       </Link>
-      <Card className="mt-5 overflow-hidden rounded-2xl border-stone-200 shadow-none">
-        <div className="bg-terracotta-900 px-6 py-8 text-white sm:px-8">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
+      <Card className="mt-5 overflow-hidden rounded-lg border-stone-200 shadow-none">
+        <div className="border-b border-stone-200 px-5 py-6 sm:px-7">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             {curriculo.foto ? (
               <Image
                 src={curriculo.foto}
@@ -133,33 +133,33 @@ export function CurriculoDetalhe({ id }: { id: string }) {
                 width={80}
                 height={80}
                 unoptimized
-                className="size-20 shrink-0 rounded-full object-cover ring-4 ring-white/20"
+                className="size-16 shrink-0 rounded-full object-cover"
               />
             ) : (
               <Iniciais nome={curriculo.nome} />
             )}
             <div className="min-w-0 flex-1">
-              <p className="text-sm font-medium text-terracotta-100">
+              <p className="text-sm font-medium text-terracotta-800">
                 Currículo profissional
               </p>
-              <h1 className="mt-1 break-words text-3xl font-bold tracking-tight">
+              <h1 className="mt-1 break-words text-2xl font-bold tracking-tight text-stone-950">
                 {curriculo.nome}
               </h1>
-              <p className="mt-1 text-base text-terracotta-50">{curriculo.cargo}</p>
+              <p className="mt-1 text-base text-stone-600">{curriculo.cargo}</p>
             </div>
             <Button
               type="button"
               variant="outline"
               disabled={excluindo}
               onClick={excluir}
-              className="shrink-0 rounded-lg border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white"
+              className="shrink-0 rounded-md"
             >
               <Trash2 size={16} /> {excluindo ? "Excluindo..." : "Excluir"}
             </Button>
           </div>
         </div>
 
-        <CardContent className="space-y-8 p-5 sm:p-8">
+        <CardContent className="space-y-6 p-5 sm:p-7">
           <section>
             <h2 className="flex items-center gap-2 font-semibold text-stone-900">
               <UserRound size={18} className="text-terracotta-800" /> Sobre

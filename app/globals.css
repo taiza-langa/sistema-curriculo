@@ -43,7 +43,7 @@
 }
 
 :root {
-  --background: oklch(0.985 0.004 85);
+  --background: oklch(1 0 0);
   --foreground: oklch(0.22 0.015 65);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.22 0.015 65);
@@ -61,7 +61,7 @@
   --border: oklch(0.9 0.008 80);
   --input: oklch(0.9 0.008 80);
   --ring: #bd5438;
-  --radius: 0.75rem;
+  --radius: 0.5rem;
 }
 
 * {
