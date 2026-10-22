@@ -1,4 +1,4 @@
-# currículo.fácil
+# currículos
 
 Aplicação web acadêmica para cadastrar, organizar e consultar currículos. O projeto usa Next.js App Router, Tailwind CSS e componentes shadcn/ui, com dados de demonstração persistidos no `localStorage`.
 

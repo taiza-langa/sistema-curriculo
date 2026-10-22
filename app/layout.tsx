@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "currículo.fácil — Gestão de currículos",
+  title: "currículos — Gestão de currículos",
   description: "Organize, cadastre e encontre currículos de forma simples.",
 };
 

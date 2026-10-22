@@ -332,12 +332,12 @@ export function CurriculoForm() {
     <section className="mx-auto max-w-4xl px-5 py-10 sm:px-8 sm:py-14">
       <Link
         href="/curriculos/visualizar"
-        className="inline-flex items-center gap-2 text-sm font-medium text-stone-600 hover:text-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700"
+        className="inline-flex items-center gap-2 text-sm font-medium text-stone-600 hover:text-terracotta-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-700"
       >
         <ArrowLeft size={16} /> Voltar aos currículos
       </Link>
       <div className="mt-5">
-        <p className="text-sm font-semibold text-emerald-800">Novo perfil</p>
+        <p className="text-sm font-semibold text-terracotta-800">Novo perfil</p>
         <h1 className="mt-1 text-3xl font-bold tracking-tight text-stone-950">
           Cadastrar currículo
         </h1>
@@ -350,7 +350,7 @@ export function CurriculoForm() {
         <Card className="rounded-2xl border-stone-200 shadow-none">
           <CardContent className="p-5 sm:p-7">
             <div className="mb-6 flex items-center gap-3">
-              <span className="flex size-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-800">
+              <span className="flex size-10 items-center justify-center rounded-xl bg-terracotta-50 text-terracotta-800">
                 <UserRound size={20} />
               </span>
               <div>
@@ -381,7 +381,7 @@ export function CurriculoForm() {
               <div>
                 <label
                   htmlFor="foto"
-                  className="inline-flex h-9 cursor-pointer items-center gap-2 rounded-lg border border-stone-200 bg-white px-3 text-sm font-medium text-stone-700 hover:bg-stone-50 focus-within:ring-2 focus-within:ring-emerald-700"
+                  className="inline-flex h-9 cursor-pointer items-center gap-2 rounded-lg border border-stone-200 bg-white px-3 text-sm font-medium text-stone-700 hover:bg-stone-50 focus-within:ring-2 focus-within:ring-terracotta-700"
                 >
                   <ImagePlus size={16} /> Enviar foto
                 </label>
@@ -434,7 +434,7 @@ export function CurriculoForm() {
                       onBlur={field.onBlur}
                       inputRef={field.ref}
                       aria-invalid={Boolean(errors.telefone)}
-                      className="mt-1.5 h-10 w-full rounded-lg border border-stone-200 bg-white px-3 text-sm outline-none transition focus-visible:ring-2 focus-visible:ring-emerald-700"
+                      className="mt-1.5 h-10 w-full rounded-lg border border-stone-200 bg-white px-3 text-sm outline-none transition focus-visible:ring-2 focus-visible:ring-terracotta-700"
                     />
                   )}
                 />
@@ -453,7 +453,7 @@ export function CurriculoForm() {
                       onBlur={field.onBlur}
                       inputRef={field.ref}
                       aria-invalid={Boolean(errors.cpf)}
-                      className="mt-1.5 h-10 w-full rounded-lg border border-stone-200 bg-white px-3 text-sm outline-none transition focus-visible:ring-2 focus-visible:ring-emerald-700"
+                      className="mt-1.5 h-10 w-full rounded-lg border border-stone-200 bg-white px-3 text-sm outline-none transition focus-visible:ring-2 focus-visible:ring-terracotta-700"
                     />
                   )}
                 />
@@ -472,7 +472,7 @@ export function CurriculoForm() {
                       onBlur={field.onBlur}
                       inputRef={field.ref}
                       aria-invalid={Boolean(errors.nascimento)}
-                      className="mt-1.5 h-10 w-full rounded-lg border border-stone-200 bg-white px-3 text-sm outline-none transition focus-visible:ring-2 focus-visible:ring-emerald-700"
+                      className="mt-1.5 h-10 w-full rounded-lg border border-stone-200 bg-white px-3 text-sm outline-none transition focus-visible:ring-2 focus-visible:ring-terracotta-700"
                     />
                   )}
                 />
@@ -538,7 +538,7 @@ export function CurriculoForm() {
           <CardContent className="p-5 sm:p-7">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <span className="flex size-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-800">
+                <span className="flex size-10 items-center justify-center rounded-xl bg-terracotta-50 text-terracotta-800">
                   <BriefcaseBusiness size={20} />
                 </span>
                 <div>
@@ -625,7 +625,7 @@ export function CurriculoForm() {
                             onBlur={field.onBlur}
                             inputRef={field.ref}
                             aria-invalid={Boolean(errors.experiencias?.[index]?.inicio)}
-                            className="mt-1.5 h-10 w-full rounded-lg border border-stone-200 bg-white px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-emerald-700"
+                            className="mt-1.5 h-10 w-full rounded-lg border border-stone-200 bg-white px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-terracotta-700"
                           />
                         )}
                       />
@@ -665,7 +665,7 @@ export function CurriculoForm() {
           <CardContent className="p-5 sm:p-7">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <span className="flex size-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-800">
+                <span className="flex size-10 items-center justify-center rounded-xl bg-terracotta-50 text-terracotta-800">
                   <GraduationCap size={21} />
                 </span>
                 <div>
@@ -751,7 +751,7 @@ export function CurriculoForm() {
                             onBlur={field.onBlur}
                             inputRef={field.ref}
                             aria-invalid={Boolean(errors.formacoes?.[index]?.inicio)}
-                            className="mt-1.5 h-10 w-full rounded-lg border border-stone-200 bg-white px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-emerald-700"
+                            className="mt-1.5 h-10 w-full rounded-lg border border-stone-200 bg-white px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-terracotta-700"
                           />
                         )}
                       />
@@ -770,7 +770,7 @@ export function CurriculoForm() {
                             onBlur={field.onBlur}
                             inputRef={field.ref}
                             aria-invalid={Boolean(errors.formacoes?.[index]?.fim)}
-                            className="mt-1.5 h-10 w-full rounded-lg border border-stone-200 bg-white px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-emerald-700"
+                            className="mt-1.5 h-10 w-full rounded-lg border border-stone-200 bg-white px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-terracotta-700"
                           />
                         )}
                       />
@@ -796,7 +796,7 @@ export function CurriculoForm() {
           <Button
             type="submit"
             disabled={!form.formState.isValid || form.formState.isSubmitting || enviando}
-            className="h-11 rounded-lg bg-emerald-800 px-6 text-white hover:bg-emerald-900"
+            className="h-11 rounded-lg bg-terracotta-800 px-6 text-white hover:bg-terracotta-900"
           >
             {form.formState.isSubmitting || enviando
               ? "Salvando..."

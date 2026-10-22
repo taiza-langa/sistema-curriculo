@@ -36,7 +36,7 @@ export function CurriculosLista() {
     <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
       <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-sm font-semibold text-emerald-800">
+          <p className="text-sm font-semibold text-terracotta-800">
             Banco de talentos
           </p>
           <h1 className="mt-1 text-3xl font-bold tracking-tight text-stone-950">
@@ -46,7 +46,7 @@ export function CurriculosLista() {
             Consulte e organize os perfis profissionais cadastrados.
           </p>
         </div>
-        <Link href="/curriculos/cadastrar" className={buttonVariants({ className: "h-10 rounded-lg bg-emerald-800 text-white hover:bg-emerald-900" })}>
+        <Link href="/curriculos/cadastrar" className={buttonVariants({ className: "h-10 rounded-lg bg-terracotta-800 text-white hover:bg-terracotta-900" })}>
           <FilePlus2 size={17} /> Novo currículo
         </Link>
       </div>
@@ -73,7 +73,7 @@ export function CurriculosLista() {
               type="button"
               aria-label="Limpar busca"
               onClick={() => setBusca("")}
-              className="absolute right-2 top-1/2 flex size-8 -translate-y-1/2 items-center justify-center rounded-md text-stone-500 hover:bg-stone-100 hover:text-stone-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700"
+              className="absolute right-2 top-1/2 flex size-8 -translate-y-1/2 items-center justify-center rounded-md text-stone-500 hover:bg-stone-100 hover:text-stone-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-700"
             >
               <CircleX size={16} />
             </button>
@@ -128,7 +128,7 @@ export function CurriculosLista() {
                   ) : (
                     <span
                       aria-hidden="true"
-                      className="flex size-12 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-sm font-bold text-emerald-900"
+                      className="flex size-12 shrink-0 items-center justify-center rounded-full bg-terracotta-100 text-sm font-bold text-terracotta-900"
                     >
                       {curriculo.nome
                         .split(" ")
@@ -153,7 +153,7 @@ export function CurriculosLista() {
                 </p>
                 <Link
                   href={`/curriculos/visualizar/${curriculo.id}`}
-                  className="mt-4 inline-flex h-9 items-center gap-2 rounded-lg border border-stone-200 px-3 text-sm font-medium text-stone-700 transition-colors hover:border-emerald-700 hover:bg-emerald-50 hover:text-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700"
+                  className="mt-4 inline-flex h-9 items-center gap-2 rounded-lg border border-stone-200 px-3 text-sm font-medium text-stone-700 transition-colors hover:border-terracotta-700 hover:bg-terracotta-50 hover:text-terracotta-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-700"
                 >
                   Ver currículo <ArrowRight size={15} />
                 </Link>
@@ -164,7 +164,7 @@ export function CurriculosLista() {
       ) : (
         <Card className="mt-8 rounded-2xl border-dashed border-stone-300 shadow-none">
           <CardContent className="flex flex-col items-center px-6 py-14 text-center">
-            <span className="flex size-14 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-800">
+            <span className="flex size-14 items-center justify-center rounded-2xl bg-terracotta-50 text-terracotta-800">
               {busca ? <Search size={24} /> : <Users size={24} />}
             </span>
             <h2 className="mt-4 text-lg font-semibold text-stone-900">
@@ -178,7 +178,7 @@ export function CurriculosLista() {
                 : "Cadastre o primeiro perfil para começar a organizar os currículos."}
             </p>
             {!busca && (
-              <Link href="/curriculos/cadastrar" className={buttonVariants({ className: "mt-5 rounded-lg bg-emerald-800 text-white hover:bg-emerald-900" })}>
+              <Link href="/curriculos/cadastrar" className={buttonVariants({ className: "mt-5 rounded-lg bg-terracotta-800 text-white hover:bg-terracotta-900" })}>
                 <FilePlus2 size={17} /> Criar meu primeiro currículo
               </Link>
             )}

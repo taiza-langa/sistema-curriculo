@@ -25,7 +25,7 @@ import { useCurriculos } from "@/hooks/use-curriculos"
 
 function Iniciais({ nome }: { nome: string }) {
   return (
-    <span className="flex size-20 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-2xl font-bold text-emerald-900">
+    <span className="flex size-20 shrink-0 items-center justify-center rounded-full bg-terracotta-100 text-2xl font-bold text-terracotta-900">
       {nome
         .split(" ")
         .slice(0, 2)
@@ -75,7 +75,7 @@ export function CurriculoDetalhe({ id }: { id: string }) {
       showCancelButton: true,
       confirmButtonText: "Sim, excluir",
       cancelButtonText: "Cancelar",
-      confirmButtonColor: "#047857",
+      confirmButtonColor: "#783626",
       cancelButtonColor: "#57534e",
       reverseButtons: true,
     })
@@ -108,7 +108,7 @@ export function CurriculoDetalhe({ id }: { id: string }) {
         <p className="mt-2 text-sm text-stone-600">
           Este perfil pode ter sido removido ou não existe neste navegador.
         </p>
-        <Link href="/curriculos/visualizar" className={buttonVariants({ className: "mt-6 rounded-lg bg-emerald-800 text-white hover:bg-emerald-900" })}>
+        <Link href="/curriculos/visualizar" className={buttonVariants({ className: "mt-6 rounded-lg bg-terracotta-800 text-white hover:bg-terracotta-900" })}>
           <ArrowLeft size={16} /> Voltar à listagem
         </Link>
       </section>
@@ -119,12 +119,12 @@ export function CurriculoDetalhe({ id }: { id: string }) {
     <section className="mx-auto max-w-4xl px-5 py-10 sm:px-8 sm:py-14">
       <Link
         href="/curriculos/visualizar"
-        className="inline-flex items-center gap-2 text-sm font-medium text-stone-600 hover:text-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700"
+        className="inline-flex items-center gap-2 text-sm font-medium text-stone-600 hover:text-terracotta-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-700"
       >
         <ArrowLeft size={16} /> Voltar aos currículos
       </Link>
       <Card className="mt-5 overflow-hidden rounded-2xl border-stone-200 shadow-none">
-        <div className="bg-emerald-900 px-6 py-8 text-white sm:px-8">
+        <div className="bg-terracotta-900 px-6 py-8 text-white sm:px-8">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
             {curriculo.foto ? (
               <Image
@@ -139,13 +139,13 @@ export function CurriculoDetalhe({ id }: { id: string }) {
               <Iniciais nome={curriculo.nome} />
             )}
             <div className="min-w-0 flex-1">
-              <p className="text-sm font-medium text-emerald-100">
+              <p className="text-sm font-medium text-terracotta-100">
                 Currículo profissional
               </p>
               <h1 className="mt-1 break-words text-3xl font-bold tracking-tight">
                 {curriculo.nome}
               </h1>
-              <p className="mt-1 text-base text-emerald-50">{curriculo.cargo}</p>
+              <p className="mt-1 text-base text-terracotta-50">{curriculo.cargo}</p>
             </div>
             <Button
               type="button"
@@ -162,7 +162,7 @@ export function CurriculoDetalhe({ id }: { id: string }) {
         <CardContent className="space-y-8 p-5 sm:p-8">
           <section>
             <h2 className="flex items-center gap-2 font-semibold text-stone-900">
-              <UserRound size={18} className="text-emerald-800" /> Sobre
+              <UserRound size={18} className="text-terracotta-800" /> Sobre
             </h2>
             <p className="mt-3 text-sm leading-7 text-stone-600">
               {curriculo.resumo}
@@ -186,20 +186,20 @@ export function CurriculoDetalhe({ id }: { id: string }) {
 
           <section className="border-t border-stone-200 pt-6">
             <h2 className="flex items-center gap-2 font-semibold text-stone-900">
-              <MapPin size={18} className="text-emerald-800" /> Contato e dados
+              <MapPin size={18} className="text-terracotta-800" /> Contato e dados
               pessoais
             </h2>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               <a
                 href={`mailto:${curriculo.email}`}
-                className="flex items-center gap-2 break-all text-sm text-stone-600 hover:text-emerald-800"
+                className="flex items-center gap-2 break-all text-sm text-stone-600 hover:text-terracotta-800"
               >
                 <Mail size={16} className="shrink-0 text-stone-400" />
                 {curriculo.email}
               </a>
               <a
                 href={`tel:${curriculo.telefone.replace(/[^\d+]/g, "")}`}
-                className="flex items-center gap-2 text-sm text-stone-600 hover:text-emerald-800"
+                className="flex items-center gap-2 text-sm text-stone-600 hover:text-terracotta-800"
               >
                 <Phone size={16} className="shrink-0 text-stone-400" />
                 {curriculo.telefone}
@@ -218,7 +218,7 @@ export function CurriculoDetalhe({ id }: { id: string }) {
                   href={`https://${curriculo.linkedin.replace(/^https?:\/\//, "")}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 break-all text-sm text-emerald-800 hover:underline"
+                  className="inline-flex items-center gap-2 break-all text-sm text-terracotta-800 hover:underline"
                 >
                   <ExternalLink size={15} />
                   {curriculo.linkedin}
@@ -229,7 +229,7 @@ export function CurriculoDetalhe({ id }: { id: string }) {
 
           <section className="border-t border-stone-200 pt-6">
             <h2 className="flex items-center gap-2 font-semibold text-stone-900">
-              <BriefcaseBusiness size={18} className="text-emerald-800" />{" "}
+              <BriefcaseBusiness size={18} className="text-terracotta-800" />{" "}
               Experiência profissional
             </h2>
             {curriculo.experiencias.length ? (
@@ -237,7 +237,7 @@ export function CurriculoDetalhe({ id }: { id: string }) {
                 {curriculo.experiencias.map((experiencia, index) => (
                   <div
                     key={`${experiencia.empresa}-${index}`}
-                    className="border-l-2 border-emerald-200 pl-4"
+                    className="border-l-2 border-terracotta-200 pl-4"
                   >
                     <h3 className="font-medium text-stone-900">
                       {experiencia.cargo}
@@ -263,7 +263,7 @@ export function CurriculoDetalhe({ id }: { id: string }) {
 
           <section className="border-t border-stone-200 pt-6">
             <h2 className="flex items-center gap-2 font-semibold text-stone-900">
-              <GraduationCap size={19} className="text-emerald-800" /> Formação
+              <GraduationCap size={19} className="text-terracotta-800" /> Formação
               acadêmica
             </h2>
             {curriculo.formacoes.length ? (
@@ -271,7 +271,7 @@ export function CurriculoDetalhe({ id }: { id: string }) {
                 {curriculo.formacoes.map((formacao, index) => (
                   <div
                     key={`${formacao.instituicao}-${index}`}
-                    className="border-l-2 border-emerald-200 pl-4"
+                    className="border-l-2 border-terracotta-200 pl-4"
                   >
                     <h3 className="font-medium text-stone-900">
                       {formacao.curso}

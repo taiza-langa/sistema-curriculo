@@ -5,6 +5,17 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-terracotta-50: #fff7f3;
+  --color-terracotta-100: #ffebe2;
+  --color-terracotta-200: #fbd3c2;
+  --color-terracotta-300: #f3b397;
+  --color-terracotta-400: #e8906c;
+  --color-terracotta-500: #d9704e;
+  --color-terracotta-600: #bd5438;
+  --color-terracotta-700: #98432f;
+  --color-terracotta-800: #783626;
+  --color-terracotta-900: #5f2b20;
+  --color-terracotta-950: #3f1a13;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -38,18 +49,18 @@
   --card-foreground: oklch(0.22 0.015 65);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.22 0.015 65);
-  --primary: oklch(0.39 0.09 163);
+  --primary: #783626;
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.95 0.015 150);
-  --secondary-foreground: oklch(0.3 0.06 160);
+  --secondary: #ffebe2;
+  --secondary-foreground: #5f2b20;
   --muted: oklch(0.96 0.006 80);
   --muted-foreground: oklch(0.5 0.015 65);
-  --accent: oklch(0.95 0.015 150);
-  --accent-foreground: oklch(0.3 0.06 160);
+  --accent: #ffebe2;
+  --accent-foreground: #5f2b20;
   --destructive: oklch(0.58 0.22 27);
   --border: oklch(0.9 0.008 80);
   --input: oklch(0.9 0.008 80);
-  --ring: oklch(0.48 0.1 160);
+  --ring: #bd5438;
   --radius: 0.75rem;
 }
 
@@ -70,6 +81,6 @@ body {
 }
 
 ::selection {
-  background: oklch(0.85 0.08 160);
-  color: oklch(0.2 0.03 160);
+  background: #fbd3c2;
+  color: #3f1a13;
 }
