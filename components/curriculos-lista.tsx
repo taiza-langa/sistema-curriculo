@@ -90,32 +90,35 @@ export function CurriculosLista() {
       </div>
 
       {carregando ? (
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 space-y-3">
           {Array.from({ length: 6 }, (_, index) => (
             <Card key={index} className="rounded-2xl">
-              <CardContent className="space-y-4 p-5">
-                <div className="flex gap-3">
+              <CardContent className="grid gap-4 p-4 sm:grid-cols-[minmax(0,14rem)_minmax(0,1fr)_auto] sm:items-center sm:p-5">
+                <div className="flex min-w-0 items-center gap-3">
                   <Skeleton className="size-12 rounded-full" />
-                  <div className="flex-1 space-y-2">
+                  <div className="min-w-0 flex-1 space-y-2">
                     <Skeleton className="h-4 w-3/4" />
                     <Skeleton className="h-3 w-1/2" />
                   </div>
                 </div>
-                <Skeleton className="h-12 w-full" />
+                <div className="space-y-2">
+                  <Skeleton className="h-3 w-full" />
+                  <Skeleton className="h-3 w-4/5" />
+                </div>
                 <Skeleton className="h-9 w-28" />
               </CardContent>
             </Card>
           ))}
         </div>
       ) : filtrados.length ? (
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 space-y-3">
           {filtrados.map((curriculo) => (
             <Card
               key={curriculo.id}
               className="rounded-2xl border-stone-200 shadow-none transition-shadow hover:shadow-md"
             >
-              <CardContent className="p-5">
-                <div className="flex items-start gap-3">
+              <CardContent className="grid gap-4 p-4 sm:grid-cols-[minmax(0,14rem)_minmax(0,1fr)_auto] sm:items-center sm:p-5">
+                <div className="flex min-w-0 items-center gap-3">
                   {curriculo.foto ? (
                     <Image
                       src={curriculo.foto}
@@ -148,12 +151,12 @@ export function CurriculosLista() {
                     </p>
                   </div>
                 </div>
-                <p className="mt-4 line-clamp-3 min-h-[4.5rem] text-sm leading-6 text-stone-600">
+                <p className="line-clamp-2 text-sm leading-6 text-stone-600">
                   {curriculo.resumo}
                 </p>
                 <Link
                   href={`/curriculos/visualizar/${curriculo.id}`}
-                  className="mt-4 inline-flex h-9 items-center gap-2 rounded-lg border border-stone-200 px-3 text-sm font-medium text-stone-700 transition-colors hover:border-terracotta-700 hover:bg-terracotta-50 hover:text-terracotta-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-700"
+                  className="inline-flex h-9 w-fit items-center gap-2 rounded-lg border border-stone-200 px-3 text-sm font-medium text-stone-700 transition-colors hover:border-terracotta-700 hover:bg-terracotta-50 hover:text-terracotta-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta-700"
                 >
                   Ver currículo <ArrowRight size={15} />
                 </Link>
