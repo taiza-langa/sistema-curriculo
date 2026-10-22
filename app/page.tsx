@@ -1,69 +1,102 @@
-import Image from "next/image";
+import Link from "next/link"
+import { ArrowRight, FilePlus2, Search, ShieldCheck, Sparkles } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+
+const beneficios = [
+  {
+    icon: FilePlus2,
+    titulo: "Cadastre com facilidade",
+    descricao: "Reúna dados pessoais, experiências e formações em um único lugar.",
+  },
+  {
+    icon: Search,
+    titulo: "Encontre em segundos",
+    descricao: "Pesquise currículos por nome ou cargo com filtro em tempo real.",
+  },
+  {
+    icon: ShieldCheck,
+    titulo: "Tudo organizado",
+    descricao: "Acesse informações completas e mantenha seus registros no navegador.",
+  },
+]
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div>
+      <section className="border-b border-stone-200 bg-white">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-900">
+              <Sparkles size={14} /> Gestão de currículos sem complicação
+            </div>
+            <h1 className="max-w-2xl text-4xl font-bold leading-tight tracking-tight text-stone-950 sm:text-5xl lg:text-6xl">
+              Pessoas incríveis, <span className="text-emerald-800">bem organizadas.</span>
+            </h1>
+            <p className="mt-5 max-w-xl text-base leading-7 text-stone-600 sm:text-lg">
+              Uma forma simples de cadastrar, consultar e manter os currículos da sua equipe em um só lugar.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button render={<Link href="/curriculos/cadastrar" />} size="lg" className="h-11 rounded-lg bg-emerald-800 px-5 text-white hover:bg-emerald-900">
+                Cadastrar currículo <ArrowRight size={17} />
+              </Button>
+              <Button render={<Link href="/curriculos/visualizar" />} variant="outline" size="lg" className="h-11 rounded-lg px-5">
+                Explorar currículos
+              </Button>
+            </div>
+            <p className="mt-5 text-xs text-stone-500">Seus dados ficam salvos localmente neste navegador.</p>
+          </div>
+          <Card className="overflow-hidden rounded-2xl border border-stone-200 bg-stone-50 p-0 shadow-sm">
+            <CardContent className="p-6 sm:p-8">
+              <div className="flex items-start justify-between">
+                <div>
+                  <p className="text-sm font-medium text-stone-500">Visão geral</p>
+                  <h2 className="mt-1 text-2xl font-bold text-stone-900">Banco de talentos</h2>
+                </div>
+                <span className="rounded-xl bg-emerald-100 p-3 text-emerald-900"><FilePlus2 size={22} /></span>
+              </div>
+              <div className="mt-8 space-y-3">
+                {[
+                  ["MC", "Mariana Costa", "Product Designer", "bg-rose-100 text-rose-800"],
+                  ["LF", "Lucas Ferreira", "Desenvolvedor Front-end", "bg-sky-100 text-sky-800"],
+                  ["AS", "Ana Souza", "Analista de Marketing", "bg-amber-100 text-amber-800"],
+                ].map(([iniciais, nome, cargo, cor]) => (
+                  <div key={nome} className="flex items-center gap-3 rounded-xl border border-stone-200 bg-white p-3.5">
+                    <span className={`flex size-10 items-center justify-center rounded-full text-xs font-bold ${cor}`}>{iniciais}</span>
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-semibold text-stone-900">{nome}</p>
+                      <p className="truncate text-xs text-stone-500">{cargo}</p>
+                    </div>
+                    <ArrowRight size={16} className="text-stone-400" />
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 flex items-center gap-2 border-t border-stone-200 pt-4 text-xs text-stone-500">
+                <span className="size-2 rounded-full bg-emerald-600" /> Acesso rápido aos perfis cadastrados
+              </div>
+            </CardContent>
+          </Card>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-sm font-semibold text-emerald-800">Feito para simplificar</p>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-stone-950">Tudo o que você precisa, sem excessos.</h2>
+          <p className="mt-3 leading-7 text-stone-600">Uma experiência direta para organizar informações profissionais e encontrar os perfis certos.</p>
         </div>
-      </main>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {beneficios.map(({ icon: Icon, titulo, descricao }) => (
+            <Card key={titulo} className="rounded-2xl border-stone-200 shadow-none">
+              <CardContent className="p-6">
+                <span className="flex size-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-800"><Icon size={21} /></span>
+                <h3 className="mt-5 text-lg font-semibold text-stone-900">{titulo}</h3>
+                <p className="mt-2 text-sm leading-6 text-stone-600">{descricao}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
     </div>
-  );
+  )
 }
