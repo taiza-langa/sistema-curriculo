@@ -152,6 +152,27 @@ function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null
 }
 
+function isExperiencia(value: unknown): value is Experiencia {
+  return (
+    isRecord(value) &&
+    typeof value.cargo === "string" &&
+    typeof value.empresa === "string" &&
+    typeof value.inicio === "string" &&
+    typeof value.fim === "string" &&
+    typeof value.descricao === "string"
+  )
+}
+
+function isFormacao(value: unknown): value is Formacao {
+  return (
+    isRecord(value) &&
+    typeof value.curso === "string" &&
+    typeof value.instituicao === "string" &&
+    typeof value.inicio === "string" &&
+    typeof value.fim === "string"
+  )
+}
+
 export function isCurriculo(value: unknown): value is Curriculo {
   return (
     isRecord(value) &&
@@ -170,7 +191,9 @@ export function isCurriculo(value: unknown): value is Curriculo {
     typeof value.habilidades === "string" &&
     typeof value.foto === "string" &&
     Array.isArray(value.experiencias) &&
+    value.experiencias.every(isExperiencia) &&
     Array.isArray(value.formacoes) &&
+    value.formacoes.every(isFormacao) &&
     typeof value.criadoEm === "string"
   )
 }
