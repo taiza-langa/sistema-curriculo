@@ -1,10 +1,12 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { useMemo, useState } from "react"
 import {
   ArrowRight,
   BriefcaseBusiness,
+  CircleX,
   FilePlus2,
   Search,
   Users,
@@ -57,11 +59,25 @@ export function CurriculosLista() {
           />
           <Input
             aria-label="Buscar por nome ou cargo"
+            aria-describedby="search-description"
             placeholder="Buscar por nome ou cargo..."
             value={busca}
             onChange={(event) => setBusca(event.target.value)}
-            className="h-11 rounded-xl border-stone-200 bg-white pl-10"
+            className="h-11 rounded-xl border-stone-200 bg-white pl-10 pr-10"
           />
+          <span id="search-description" className="sr-only">
+            A lista é filtrada em tempo real pelo nome ou cargo.
+          </span>
+          {busca && (
+            <button
+              type="button"
+              aria-label="Limpar busca"
+              onClick={() => setBusca("")}
+              className="absolute right-2 top-1/2 flex size-8 -translate-y-1/2 items-center justify-center rounded-md text-stone-500 hover:bg-stone-100 hover:text-stone-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700"
+            >
+              <CircleX size={16} />
+            </button>
+          )}
         </div>
         {!carregando && (
           <Badge
@@ -100,14 +116,28 @@ export function CurriculosLista() {
             >
               <CardContent className="p-5">
                 <div className="flex items-start gap-3">
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-sm font-bold text-emerald-900">
-                    {curriculo.nome
-                      .split(" ")
-                      .slice(0, 2)
-                      .map((parte) => parte[0])
-                      .join("")
-                      .toLocaleUpperCase("pt-BR")}
-                  </span>
+                  {curriculo.foto ? (
+                    <Image
+                      src={curriculo.foto}
+                      alt={`Foto de ${curriculo.nome}`}
+                      width={48}
+                      height={48}
+                      unoptimized
+                      className="size-12 shrink-0 rounded-full object-cover"
+                    />
+                  ) : (
+                    <span
+                      aria-hidden="true"
+                      className="flex size-12 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-sm font-bold text-emerald-900"
+                    >
+                      {curriculo.nome
+                        .split(" ")
+                        .slice(0, 2)
+                        .map((parte) => parte[0])
+                        .join("")
+                        .toLocaleUpperCase("pt-BR")}
+                    </span>
+                  )}
                   <div className="min-w-0 flex-1 pt-0.5">
                     <h2 className="truncate font-semibold text-stone-900">
                       {curriculo.nome}
