@@ -45,6 +45,11 @@ const experienciaSchema = yup.object({
   inicio: yup
     .string()
     .matches(/^\d{2}\/\d{4}$/, "Use o formato MM/AAAA para o início.")
+    .test("mes-inicio", "Informe um mês válido entre 01 e 12.", (value) => {
+      if (!value || !/^\d{2}\/\d{4}$/.test(value)) return true
+      const mes = Number(value.slice(0, 2))
+      return mes >= 1 && mes <= 12
+    })
     .required("Informe o mês e ano de início."),
   fim: yup
     .string()
@@ -54,7 +59,12 @@ const experienciaSchema = yup.object({
       "periodo-fim",
       "Use o formato MM/AAAA ou escreva Atual.",
       (value) => !value || value.toLowerCase() === "atual" || /^\d{2}\/\d{4}$/.test(value),
-    ),
+    )
+    .test("mes-fim", "Informe um mês válido entre 01 e 12.", (value) => {
+      if (!value || value.toLowerCase() === "atual" || !/^\d{2}\/\d{4}$/.test(value)) return true
+      const mes = Number(value.slice(0, 2))
+      return mes >= 1 && mes <= 12
+    }),
   descricao: yup
     .string()
     .trim()
@@ -76,10 +86,20 @@ const formacaoSchema = yup.object({
   inicio: yup
     .string()
     .matches(/^\d{2}\/\d{4}$/, "Use o formato MM/AAAA para o início.")
+    .test("mes-inicio", "Informe um mês válido entre 01 e 12.", (value) => {
+      if (!value || !/^\d{2}\/\d{4}$/.test(value)) return true
+      const mes = Number(value.slice(0, 2))
+      return mes >= 1 && mes <= 12
+    })
     .required("Informe o mês e ano de início."),
   fim: yup
     .string()
     .matches(/^\d{2}\/\d{4}$/, "Use o formato MM/AAAA para o término.")
+    .test("mes-fim", "Informe um mês válido entre 01 e 12.", (value) => {
+      if (!value || !/^\d{2}\/\d{4}$/.test(value)) return true
+      const mes = Number(value.slice(0, 2))
+      return mes >= 1 && mes <= 12
+    })
     .required("Informe o mês e ano de término."),
 })
 

@@ -35,16 +35,16 @@ export function SiteHeader() {
             )
           })}
         </nav>
-        <button type="button" className="flex size-10 items-center justify-center rounded-lg text-stone-700 hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 md:hidden" aria-label={menuAberto ? "Fechar menu" : "Abrir menu"} aria-expanded={menuAberto} onClick={() => setMenuAberto(!menuAberto)}>
+        <button type="button" className="flex size-10 items-center justify-center rounded-lg text-stone-700 hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 md:hidden" aria-label={menuAberto ? "Fechar menu" : "Abrir menu"} aria-expanded={menuAberto} aria-controls="mobile-navigation" onClick={() => setMenuAberto(!menuAberto)}>
           {menuAberto ? <X size={21} /> : <Menu size={21} />}
         </button>
       </div>
       {menuAberto && (
-        <nav aria-label="Navegação móvel" className="border-t border-stone-100 px-5 py-3 md:hidden">
+        <nav id="mobile-navigation" aria-label="Navegação móvel" className="border-t border-stone-100 px-5 py-3 md:hidden">
           <div className="mx-auto flex max-w-6xl flex-col gap-1">
             {links.map((link) => {
               const ativo = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href)
-              return <Link key={link.href} href={link.href} aria-current={ativo ? "page" : undefined} onClick={() => setMenuAberto(false)} className={cn("rounded-lg px-3 py-2.5 text-sm font-medium hover:bg-stone-100", ativo ? "bg-emerald-50 text-emerald-900" : "text-stone-600")}>{link.label}</Link>
+              return <Link key={link.href} href={link.href} aria-current={ativo ? "page" : undefined} onClick={() => setMenuAberto(false)} className={cn("rounded-lg px-3 py-2.5 text-sm font-medium hover:bg-stone-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700", ativo ? "bg-emerald-50 text-emerald-900" : "text-stone-600")}>{link.label}</Link>
             })}
           </div>
         </nav>
