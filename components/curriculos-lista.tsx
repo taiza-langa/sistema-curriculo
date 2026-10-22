@@ -10,7 +10,7 @@ import {
   Users,
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Skeleton } from "@/components/ui/skeleton"
@@ -44,12 +44,9 @@ export function CurriculosLista() {
             Consulte e organize os perfis profissionais cadastrados.
           </p>
         </div>
-        <Button
-          render={<Link href="/curriculos/cadastrar" />}
-          className="h-10 rounded-lg bg-emerald-800 text-white hover:bg-emerald-900"
-        >
+        <Link href="/curriculos/cadastrar" className={buttonVariants({ className: "h-10 rounded-lg bg-emerald-800 text-white hover:bg-emerald-900" })}>
           <FilePlus2 size={17} /> Novo currículo
-        </Button>
+        </Link>
       </div>
 
       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -151,12 +148,9 @@ export function CurriculosLista() {
                 : "Cadastre o primeiro perfil para começar a organizar os currículos."}
             </p>
             {!busca && (
-              <Button
-                render={<Link href="/curriculos/cadastrar" />}
-                className="mt-5 rounded-lg bg-emerald-800 text-white hover:bg-emerald-900"
-              >
+              <Link href="/curriculos/cadastrar" className={buttonVariants({ className: "mt-5 rounded-lg bg-emerald-800 text-white hover:bg-emerald-900" })}>
                 <FilePlus2 size={17} /> Criar meu primeiro currículo
-              </Button>
+              </Link>
             )}
           </CardContent>
         </Card>

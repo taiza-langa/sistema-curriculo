@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# currículo.fácil
 
-## Getting Started
+Aplicação web acadêmica para cadastrar, organizar e consultar currículos. O projeto usa Next.js App Router, Tailwind CSS e componentes shadcn/ui, com dados de demonstração persistidos no `localStorage`.
 
-First, run the development server:
+## Requisitos
+
+- Node.js 20 ou superior
+- npm
+
+## Instalação e execução
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Comando | Descrição |
+| --- | --- |
+| `npm run dev` | Inicia o servidor de desenvolvimento |
+| `npm run lint` | Executa o ESLint |
+| `npx tsc --noEmit` | Verifica os tipos TypeScript |
+| `npm run build` | Gera a build de produção |
+| `npm run start` | Inicia a build de produção |
 
-## Learn More
+## Rotas
 
-To learn more about Next.js, take a look at the following resources:
+| Rota | Descrição |
+| --- | --- |
+| `/` | Landing page e apresentação dos benefícios |
+| `/curriculos/visualizar` | Lista, busca e filtra currículos |
+| `/curriculos/visualizar/[id]` | Detalhes e opção para excluir um currículo |
+| `/curriculos/cadastrar` | Formulário de cadastro |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+As rotas antigas `/sistema/paginas/curriculos`, `/sistema/paginas/curriculos/novo` e `/sistema/paginas/curriculos/[id]` redirecionam para os caminhos amigáveis.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Funcionalidades
 
-## Deploy on Vercel
+- Cadastro com React Hook Form e validação Yup.
+- Máscaras de CPF, telefone e datas com React IMask.
+- Inclusão e remoção de várias experiências e formações com `useFieldArray`.
+- Busca em tempo real por nome ou cargo.
+- Upload demonstrativo de imagem: prévia e conteúdo ficam salvos como dados locais no navegador; limite de 300 KB por imagem.
+- Alertas de sucesso e validação com Sonner, confirmação de exclusão com SweetAlert2.
+- Estado vazio, skeletons de carregamento e interface responsiva.
+- Currículos de demonstração são carregados na primeira visita. Os registros ficam no `localStorage` do navegador com a chave `curriculo-facil:curriculos`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> Este projeto é uma etapa de interface com persistência local. Os dados e imagens não são enviados para um servidor e não são compartilhados entre navegadores ou dispositivos. Para reiniciar os dados de demonstração, remova a chave `curriculo-facil:curriculos` do armazenamento local do navegador.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Tecnologias
+
+- Next.js App Router e React
+- Tailwind CSS e shadcn/ui
+- React Hook Form, Yup e React IMask
+- Sonner, SweetAlert2, Lucide React e React Icons
+- Next Image
+
+## Deploy
+
+O projeto pode ser importado na [Vercel](https://vercel.com/new) conectado ao repositório GitHub. A configuração padrão detecta Next.js; use `npm run build` para validar a compilação antes do deploy.

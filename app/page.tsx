@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { ArrowRight, FilePlus2, Search, ShieldCheck, Sparkles } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
 const beneficios = [
@@ -37,12 +37,12 @@ export default function Home() {
               Uma forma simples de cadastrar, consultar e manter os currículos da sua equipe em um só lugar.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button render={<Link href="/curriculos/cadastrar" />} size="lg" className="h-11 rounded-lg bg-emerald-800 px-5 text-white hover:bg-emerald-900">
+              <Link href="/curriculos/cadastrar" className={buttonVariants({ size: "lg", className: "h-11 rounded-lg bg-emerald-800 px-5 text-white hover:bg-emerald-900" })}>
                 Cadastrar currículo <ArrowRight size={17} />
-              </Button>
-              <Button render={<Link href="/curriculos/visualizar" />} variant="outline" size="lg" className="h-11 rounded-lg px-5">
+              </Link>
+              <Link href="/curriculos/visualizar" className={buttonVariants({ variant: "outline", size: "lg", className: "h-11 rounded-lg px-5" })}>
                 Explorar currículos
-              </Button>
+              </Link>
             </div>
             <p className="mt-5 text-xs text-stone-500">Seus dados ficam salvos localmente neste navegador.</p>
           </div>

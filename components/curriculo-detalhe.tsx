@@ -18,7 +18,7 @@ import {
 } from "lucide-react"
 import { toast } from "sonner"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
 import { useCurriculos } from "@/hooks/use-curriculos"
@@ -108,12 +108,9 @@ export function CurriculoDetalhe({ id }: { id: string }) {
         <p className="mt-2 text-sm text-stone-600">
           Este perfil pode ter sido removido ou não existe neste navegador.
         </p>
-        <Button
-          render={<Link href="/curriculos/visualizar" />}
-          className="mt-6 rounded-lg bg-emerald-800 text-white hover:bg-emerald-900"
-        >
+        <Link href="/curriculos/visualizar" className={buttonVariants({ className: "mt-6 rounded-lg bg-emerald-800 text-white hover:bg-emerald-900" })}>
           <ArrowLeft size={16} /> Voltar à listagem
-        </Button>
+        </Link>
       </section>
     )
   }
